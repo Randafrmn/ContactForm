@@ -30,7 +30,7 @@ span {
 
 .radio-item label {
   display: block;
-  padding: 10px 30px;
+  padding: 5px 30px;
   border: 1px solid #87a3a6;
   border-radius: 6px;
   cursor: pointer;
@@ -80,4 +80,10 @@ span {
 .checkbox-item input[type="checkbox"] {
   accent-color: #0c7d69;
   width: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .radio-item label {
+    padding: 10px 30px;
+  }
 }
