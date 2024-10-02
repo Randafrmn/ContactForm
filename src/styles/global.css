@@ -17,7 +17,7 @@ body {
 }
 
 label {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 span {
@@ -30,7 +30,7 @@ span {
 
 .radio-item label {
   display: block;
-  padding: 5px 30px;
+  padding: 10px 30px;
   border: 1px solid #87a3a6;
   border-radius: 6px;
   cursor: pointer;

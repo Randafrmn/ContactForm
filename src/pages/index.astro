@@ -3,19 +3,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-	<div class="flex justify-center items-center bg-[#dff1e7] py-10 px-6 mx-auto">
+	<div class="flex justify-center items-center bg-[#dff1e7] md:py-10 py-6 px-4 mx-auto">
 		<div class="container mx-auto bg-[#ffffff] md:w-10/12 lg:w-5/12 p-6 rounded-lg">
 			<h1 class="text-xl font-bold text-[#2b4246]">Contact Us</h1>
 			<!-- First Name dan Last Name -->
 			<div class="flex flex-col md:flex-row md:gap-4 justify-between py-2 pb-2 text-[#2b4246]">
 			  <div class="w-full">
 				<label for="firstName" class="block mb-1">First Name <span>*</span></label>
-				<input type="text" id="firstName" class="border border-[#87a3a6] rounded-md p-4 w-full h-8 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
+				<input type="text" id="firstName" class="border border-[#87a3a6] rounded-md p-4 w-full md:md:h-8 h-10 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
 				<p id="error-message-firstName" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
 			  </div>
 			  <div class="w-full md:mt-0 mt-2"> <!-- mt-4 untuk jarak pada mobile -->
 				<label for="lastName" class="block mb-1">Last Name <span>*</span></label>
-				<input type="text" id="lastName" class="border border-[#87a3a6] rounded-md p-4 w-full h-8 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
+				<input type="text" id="lastName" class="border border-[#87a3a6] rounded-md p-4 w-full md:h-8 h-10 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
 				<p id="error-message-lastName" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
 			  </div>
 			</div>
@@ -23,7 +23,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			<div class="flex pb-2 text-[#2b4246]">
 				<div class="w-full">
 				  <label for="email" class="block mb-1">Email Address <span>*</span></label>
-				  <input type="text" id="email" class="border border-[#87a3a6] rounded-md p-4 w-full h-8 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
+				  <input type="text" id="email" class="border border-[#87a3a6] rounded-md p-4 w-full md:h-8 h-10 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
 				  <p id="error-message-email" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
 				  <p id="error-message-email-valid" class="text-[#d73c3c] text-xs hidden pt-1">Please enter a valid email address</p>
 				</div>
@@ -46,11 +46,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			<!-- Message -->
 			<div class="flex flex-col pb-2 text-[#2b4246]">
 				<label for="message" class="block mb-1">Message <span>*</span></label>
-				<textarea name="message" id="message" class="resize-none border border-[#87a3a6] rounded-md p-4 w-full h-16 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]"></textarea>
+				<textarea name="message" id="message" class="resize-none border border-[#87a3a6] rounded-md p-4 w-full md:h-16 h-36 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]"></textarea>
 				<p id="error-message-message" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
 			</div>
 			<!-- Checkbox -->
-			<div class="checkbox-item flex flex-row pb-2">
+			<div class="checkbox-item flex flex-row">
 				<input type="checkbox" name="checkbox" id="checkbox">
 				<label for="checkbox" class="px-2 cursor-pointer text-[#2b4246]">I consent to being contacted by the team <span>*</span></label>
 			</div>
@@ -63,7 +63,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 	</div>
 
 	<!-- Custom Alert -->
-	<div id="customAlert" class="boxAlert flex items-center justify-center absolute top-3 left-0 right-0 mx-auto px-10">
+	<div id="customAlert" class="boxAlert flex items-center justify-center fixed top-3 left-0 right-0 mx-auto px-10">
 		<div class="bg-[#2e4244] p-4 rounded-lg shadow-lg w-auto">
 			<h2 class="flex items-center text-sm font-bold mb-2 text-[#ffffffee] gap-2">
 				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36">
@@ -76,7 +76,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			<p class="md:text-sm text-xs text-[#ffffff9e]">Thanks for completing the form. We'll be in touch soon</p>
 		</div>
 	</div>
-
 </BaseLayout>
 
 
@@ -188,5 +187,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			event.preventDefault();
 		}
 	});
-
 </script>
