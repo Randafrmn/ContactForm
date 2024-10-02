@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+const pageTitle = "Contact Form";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <slot />
+        <footer class="fixed bottom-0 left-0 right-0 text-center p-2 md:relative bg-[#ffffff6d] bg-opacity-25 backdrop-blur-md md:p-2">
+            <span class="md:text-sm text-xs text-[#2b4246]">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="underline font-bold">Frontend Mentor</a>. Coded by <a href="https://github.com/randafrmn" class="underline font-bold">Randafrmn</a>.</span>
+        </footer>	
+        <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    </body>
+</html>

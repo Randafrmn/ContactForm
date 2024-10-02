@@ -1,16 +1,192 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<div class="flex justify-center items-center bg-[#dff1e7] py-10 px-6 mx-auto">
+		<div class="container mx-auto bg-[#ffffff] md:w-10/12 lg:w-5/12 p-6 rounded-lg">
+			<h1 class="text-xl font-bold text-[#2b4246]">Contact Us</h1>
+			<!-- First Name dan Last Name -->
+			<div class="flex flex-col md:flex-row md:gap-4 justify-between py-2 pb-2 text-[#2b4246]">
+			  <div class="w-full">
+				<label for="firstName" class="block mb-1">First Name <span>*</span></label>
+				<input type="text" id="firstName" class="border border-[#87a3a6] rounded-md p-4 w-full h-8 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
+				<p id="error-message-firstName" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
+			  </div>
+			  <div class="w-full md:mt-0 mt-2"> <!-- mt-4 untuk jarak pada mobile -->
+				<label for="lastName" class="block mb-1">Last Name <span>*</span></label>
+				<input type="text" id="lastName" class="border border-[#87a3a6] rounded-md p-4 w-full h-8 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
+				<p id="error-message-lastName" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
+			  </div>
+			</div>
+			<!-- Email Address -->
+			<div class="flex pb-2 text-[#2b4246]">
+				<div class="w-full">
+				  <label for="email" class="block mb-1">Email Address <span>*</span></label>
+				  <input type="text" id="email" class="border border-[#87a3a6] rounded-md p-4 w-full h-8 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
+				  <p id="error-message-email" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
+				  <p id="error-message-email-valid" class="text-[#d73c3c] text-xs hidden pt-1">Please enter a valid email address</p>
+				</div>
+			</div>
+			<!-- Query Type -->
+			<div class="flex flex-col pb-2 text-[#2b4246]">
+				<label class="block mb-2">Query Type <span>*</span></label>
+				<div class="flex flex-col md:flex-row gap-4 justify-between text-[#2b4246]">
+					<div class="radio-item w-full">
+						<input type="radio" name="radio" id="radio1">
+						<label for="radio1">General Enquiry</label>
+					</div>
+					<div class="radio-item w-full">
+						<input type="radio" name="radio" id="radio2">
+						<label for="radio2">Support Request</label>
+					</div>
+				</div>
+				<p id="error-message-radio" class="text-[#d73c3c] text-xs hidden pt-1">Please select a query type</p>				
+			</div>
+			<!-- Message -->
+			<div class="flex flex-col pb-2 text-[#2b4246]">
+				<label for="message" class="block mb-1">Message <span>*</span></label>
+				<textarea name="message" id="message" class="resize-none border border-[#87a3a6] rounded-md p-4 w-full h-16 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]"></textarea>
+				<p id="error-message-message" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
+			</div>
+			<!-- Checkbox -->
+			<div class="checkbox-item flex flex-row pb-2">
+				<input type="checkbox" name="checkbox" id="checkbox">
+				<label for="checkbox" class="px-2 cursor-pointer text-[#2b4246]">I consent to being contacted by the team <span>*</span></label>
+			</div>
+			<p id="error-message-checkbox" class="text-[#d73c3c] text-xs hidden pt-1">To submit this form, please consent to being contacted</p>
+			<!-- Submit Button -->
+			<div class="flex flex-col text-[#2b4246] pt-5">
+				<button id="submit" class="bg-[#0c7d69] text-[#ffffff] rounded-md p-2 w-full hover:bg-[#0a382f]">Submit</button>		
+			</div>
+		</div>		  
+	</div>
+
+	<!-- Custom Alert -->
+	<div id="customAlert" class="boxAlert flex items-center justify-center absolute top-3 left-0 right-0 mx-auto px-10">
+		<div class="bg-[#2e4244] p-4 rounded-lg shadow-lg w-auto">
+			<h2 class="flex items-center text-sm font-bold mb-2 text-[#ffffffee] gap-2">
+				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36">
+					<path fill="white" d="M18 2a16 16 0 1 0 16 16A16 16 0 0 0 18 2m0 30a14 14 0 1 1 14-14a14 14 0 0 1-14 14" class="clr-i-outline clr-i-outline-path-1" />
+					<path fill="white" d="M28 12.1a1 1 0 0 0-1.41 0l-11.1 11.05l-6-6A1 1 0 0 0 8 18.53L15.49 26L28 13.52a1 1 0 0 0 0-1.42" class="clr-i-outline clr-i-outline-path-2" />
+					<path fill="none" d="M0 0h36v36H0z" />
+				</svg>
+				Message Sent!
+			</h2>
+			<p class="md:text-sm text-xs text-[#ffffff9e]">Thanks for completing the form. We'll be in touch soon</p>
+		</div>
+	</div>
+
+</BaseLayout>
+
+
+<script is:inline>
+	const inputs = [
+		{ field: document.getElementById('firstName'), error: document.getElementById('error-message-firstName') },
+		{ field: document.getElementById('lastName'), error: document.getElementById('error-message-lastName') },
+		{ field: document.getElementById('message'), error: document.getElementById('error-message-message') },
+	];
+	const radios = document.getElementsByName('radio');
+	const errorMessageRadio = document.getElementById('error-message-radio');
+	const checkbox = document.getElementById('checkbox');
+	const errorMessageCheckbox = document.getElementById('error-message-checkbox');
+	const emailInput = document.getElementById('email');
+	const errorMessageEmail = document.getElementById('error-message-email');
+	const errorMessageEmailValid = document.getElementById('error-message-email-valid');
+	const submit = document.getElementById('submit');
+	const customAlert = document.getElementById('customAlert');
+    const boxAlert = document.querySelectorAll('.boxAlert');
+
+	function validateInput(input) {
+	if (input.field.value.trim() === '') {
+		input.error.classList.remove('hidden');
+		input.field.classList.add('border-[#d73c3c]', 'hover:border-[#d73c3c]');
+		return false;
+	} else {
+		input.error.classList.add('hidden');
+		input.field.classList.remove('border-[#d73c3c]', 'hover:border-[#d73c3c]');
+		return true;
+	}
+	}
+
+	customAlert.classList.add('hidden');
+
+	submit.addEventListener('click', function(event) {
+		let isValid = true;
+
+		inputs.forEach(input => {
+			if (!validateInput(input)) {
+				isValid = false;
+			}
+		});
+
+		if (!isValid) {
+			event.preventDefault();
+		}
+
+		let isSelected = false;
+		radios.forEach(radio => {
+			if (radio.checked) {
+				isSelected = true;
+			}
+		});
+
+		if (!isSelected) {
+			errorMessageRadio.classList.remove('hidden');
+			isValid = false;
+		} else {
+			errorMessageRadio.classList.add('hidden');
+		}
+
+		if (!checkbox.checked) {
+			errorMessageCheckbox.classList.remove('hidden');
+			isValid = false;
+		} else {
+			errorMessageCheckbox.classList.add('hidden');
+		}
+
+		if (emailInput.value.trim() === '') {
+			errorMessageEmail.classList.remove('hidden');
+			emailInput.classList.add('border-[#d73c3c]', 'hover:border-[#d73c3c]');
+			isValid = false;
+		} else if (!emailInput.value.includes('@')) {
+			errorMessageEmailValid.classList.remove('hidden');
+			errorMessageEmail.classList.add('hidden');
+			emailInput.classList.add('border-[#d73c3c]', 'hover:border-[#d73c3c]');
+			isValid = false;
+		} else {
+			errorMessageEmail.classList.add('hidden');
+			errorMessageEmailValid.classList.add('hidden');
+			emailInput.classList.remove('border-[#d73c3c]', 'hover:border-[#d73c3c]');
+		}
+
+		if (isValid) {
+			gsap.set(boxAlert, { opacity: 1, y: '-40px' });
+			customAlert.classList.remove('hidden');
+
+			inputs.forEach(input => {
+				input.field.value = '';
+			});
+			radios.forEach(radio => {
+				radio.checked = false;
+			});
+			checkbox.checked = false;
+			emailInput.value = '';
+			errorMessageRadio.classList.add('hidden');
+			errorMessageCheckbox.classList.add('hidden');
+			errorMessageEmail.classList.add('hidden');
+			errorMessageEmailValid.classList.add('hidden');
+
+			gsap.fromTo(boxAlert, { y: '-40px', opacity: 0.5 }, { duration: 0.3, y: '0px', opacity: 1 });
+
+			setTimeout(() => {
+				gsap.to(boxAlert, { duration: 0.3, y: '-100px', opacity: 0, onComplete: () => {
+					customAlert.classList.add('hidden'); // Tambahkan hidden lagi setelah animasi selesai
+				}});
+			}, 3000);
+		} else {
+			event.preventDefault();
+		}
+	});
+
+</script>
