@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-	<div class="flex justify-center items-center bg-[#dff1e7] md:py-10 py-6 px-4 mx-auto">
+	<div class="flex justify-center items-center bg-[#dff1e7] md:py-10 py-6 px-4 md:min-h-screen mx-auto">
 		<div class="container mx-auto bg-[#ffffff] md:w-10/12 lg:w-5/12 p-6 rounded-lg">
 			<h1 class="text-xl font-bold text-[#2b4246]">Contact Us</h1>
 			<!-- First Name dan Last Name -->
@@ -13,7 +13,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 				<input type="text" id="firstName" class="border border-[#87a3a6] rounded-md p-4 w-full md:md:h-8 h-10 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
 				<p id="error-message-firstName" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
 			  </div>
-			  <div class="w-full md:mt-0 mt-2"> <!-- mt-4 untuk jarak pada mobile -->
+			  <div class="w-full md:mt-0 mt-2">
 				<label for="lastName" class="block mb-1">Last Name <span>*</span></label>
 				<input type="text" id="lastName" class="border border-[#87a3a6] rounded-md p-4 w-full md:h-8 h-10 focus:outline-none focus:border-[#0c7d69] hover:border-[#0c7d69]">
 				<p id="error-message-lastName" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
@@ -50,7 +50,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 				<p id="error-message-message" class="text-[#d73c3c] text-xs hidden pt-1">This field is required</p>
 			</div>
 			<!-- Checkbox -->
-			<div class="checkbox-item flex flex-row">
+			<div class="checkbox-item flex flex-row pt-2">
 				<input type="checkbox" name="checkbox" id="checkbox">
 				<label for="checkbox" class="px-2 cursor-pointer text-[#2b4246]">I consent to being contacted by the team <span>*</span></label>
 			</div>
@@ -180,7 +180,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 			setTimeout(() => {
 				gsap.to(boxAlert, { duration: 0.3, y: '-100px', opacity: 0, onComplete: () => {
-					customAlert.classList.add('hidden'); // Tambahkan hidden lagi setelah animasi selesai
+					customAlert.classList.add('hidden');
 				}});
 			}, 3000);
 		} else {
